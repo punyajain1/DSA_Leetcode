@@ -1,5 +1,19 @@
 class Solution {
 public:
+int maxa(vector<int>& nums){
+    int ans=INT_MIN;
+    for(auto it:nums){
+        ans=max(it,ans);
+    }
+    return ans;
+}
+int sumd(vector<int>& nums , int d){
+    int ans=0;
+    for(auto it:nums){
+        ans+= ceil((double)it/double(d));
+    }
+    return ans;
+}
     int smallestDivisor(vector<int>& nums, int threshold) {
         int l=1,r=*max_element(nums.begin(),nums.end());
         if(nums.size()>threshold) return -1;
@@ -7,7 +21,7 @@ public:
             int mid=l+(r-l)/2;
             int x=0;
             for(auto it:nums){
-                x+=ceil((double)it/double(mid));
+                x+= ceil((double)it/double(mid));
             }
             if(x<=threshold){
                 r=mid-1;
