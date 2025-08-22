@@ -1,21 +1,27 @@
 class Solution {
 public:
-    long long calc(vector<int>& piles, int x){
-        long long th=0;
-        for(long long i=0;i<piles.size();i++){
-            th += (piles[i] + x - 1) / x;
+    int maxe(vector<int>& piles){
+        int m=INT_MIN;
+        for(int i=0;i<piles.size();i++){
+            m=max(piles[i],m);
+        }
+        return m;
+    }
+    int calc(vector<int>& piles, int x){
+        int th=0;
+        for(int i=0;i<piles.size();i++){
+            th+=((long long)piles[i] + x - 1) / x;
         }
         return th;
     }
     int minEatingSpeed(vector<int>& piles, int h) {
-        sort(piles.begin(),piles.end());
-        long long n=piles.size();
-        long long l=1,r=piles[n-1];
-        while(l<=r){
-            long long mid=(l+r)/2;
-            long long x=calc(piles,mid);
+        int r=maxe(piles);
+        int l=1;
+        while(l<r){
+            int mid=l+(r-l)/2;
+            int x=calc(piles,mid);
             if(x<=h){
-                r=mid-1;
+                r=mid;
             }else{
                 l=mid+1;
             }
