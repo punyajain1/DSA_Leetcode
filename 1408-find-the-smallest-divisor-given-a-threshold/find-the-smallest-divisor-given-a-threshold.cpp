@@ -21,7 +21,7 @@ int sumd(vector<int>& nums , int d){
             int mid=l+(r-l)/2;
             int x=0;
             for(auto it:nums){
-                x+= ceil((double)it/double(mid));
+                x+= (it+mid-1)/mid;
             }
             if(x<=threshold){
                 r=mid-1;
