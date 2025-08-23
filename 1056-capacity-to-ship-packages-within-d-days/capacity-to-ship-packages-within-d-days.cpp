@@ -8,7 +8,8 @@ public:
         return x;
     }
     int cdays(int mid,vector<int>& x){
-        int count=1, temp=0;
+        int count=1;
+        int temp=0;
         for(auto it:x){
             if(temp+it>mid){
                 count++;
