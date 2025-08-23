@@ -14,7 +14,9 @@ public:
             if(temp+it>mid){
                 count++;
                 temp=it;
-            }else temp+=it;
+            }else{
+                temp+=it;
+            }
         }
         return count;
 
