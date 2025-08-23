@@ -2,9 +2,7 @@ class Solution {
 public:
     int suma(vector<int>& weights){
         int x=0;
-        for(auto it:weights){
-            x+=it;
-        }
+        for(auto it:weights) x+=it;
         return x;
     }
     int cdays(int mid,vector<int>& x){
