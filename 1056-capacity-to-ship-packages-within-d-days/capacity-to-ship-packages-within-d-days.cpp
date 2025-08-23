@@ -22,7 +22,8 @@ public:
 
     }
     int shipWithinDays(vector<int>& weights, int days) {
-        int l=*max_element(weights.begin(),weights.end()),h=suma(weights);
+        int l=*max_element(weights.begin(),weights.end());
+        int h=suma(weights);
         while(l<h){
             int mid=(h+l)/2;
             int x=cdays(mid,weights);
