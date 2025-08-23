@@ -27,11 +27,8 @@ public:
         while(l<h){
             int mid=(h+l)/2;
             int x=cdays(mid,weights);
-            if(x <= days){
-                h=mid;
-            }else{
-                l=mid+1;
-            }
+            if(x <= days) h=mid;
+            else l=mid+1;
         }
         return l;
     }
