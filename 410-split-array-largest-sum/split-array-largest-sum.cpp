@@ -19,15 +19,15 @@ public:
         return ans;
     }
     
-    bool isFeasible(vector<int>& nums, int maxSum, int k) {
-        int count = 1;
-        int currentSum = 0;
-        for (int num : nums) {
-            currentSum += num;
-            if (currentSum > maxSum) {
-                count++;
-                currentSum = num;
-                if (count > k) return false;
+    bool isFeasible(vector<int>& nums, int ms, int k) {
+        int c=1;
+        int cs=0;
+        for(auto it : nums){
+            cs+=it;
+            if(cs>ms){
+                c++;
+                cs=it;
+                if(c>k) return false;
             }
         }
         return true;
