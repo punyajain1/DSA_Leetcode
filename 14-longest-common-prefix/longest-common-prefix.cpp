@@ -8,14 +8,11 @@ public:
         string c="";
         for(int i=1;i<strs.size();i++){
             string s1=strs[i];
-            for(int i=0;i<pre.size();i++){
-                if(pre[i]==s1[i]){
-                    continue;
-                }else{
-                    pre=pre.erase(i);
-                    break;
-                }
+            int j=0;
+            while(j<pre.size() && j<s1.size() && s1[j]==pre[j]){
+                j++;
             }
+            pre.erase(j);
         }
         if(pre.empty()) return "";
         return pre;
