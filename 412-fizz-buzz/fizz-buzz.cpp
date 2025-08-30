@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<string> fizzBuzz(int n) {
-        vector<string> s;
+        vector<string> s={};
         for(int i=1;i<=n;i++){
             s.push_back(
                 (i%3==0 && i%5==0)? "FizzBuzz":
