@@ -4,14 +4,16 @@ public:
         int ans=0;
         int n=s.length();
         for(int i=0;i<n;i++){
-            unordered_map<char, int>mp;
+            vector<int> mp(26,0);
             for(int j=i;j<n;j++){
-                mp[s[j]]++;
+                mp[s[j]-'a']++;
                 int maxf=0;
                 int minf=INT_MAX;
                 for(auto it: mp){
-                    maxf=max(maxf,it.second);
-                    minf=min(minf,it.second);
+                    if(it>0){
+                        maxf=max(maxf,it);
+                        minf=min(minf,it);
+                    }
                 }
                 ans+=(maxf-minf);
             }
