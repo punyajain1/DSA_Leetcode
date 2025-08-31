@@ -1,7 +1,6 @@
 class Solution {
 public:
     string reverseWords(string s) {
-        
         string ans;
         int i=s.length()-1;
         while (i >= 0) {
@@ -12,7 +11,6 @@ public:
             if (!ans.empty()) ans += " ";
             ans += s.substr(i + 1, j - i);
         }
-        
         return ans;
     }
 };
