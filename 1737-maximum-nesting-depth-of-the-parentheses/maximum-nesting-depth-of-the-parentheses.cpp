@@ -7,9 +7,7 @@ public:
             if(i=='('){
                 c++;
                 mx=max(mx,c);
-            }else if(i==')'){
-                c--;
-            }
+            }else if(i==')') c--;
         }
         return mx;
         
