@@ -1,18 +1,29 @@
 class Solution {
 public:
+    int rom(char x){
+        switch(x){
+            case 'I':
+                return 1;
+            case 'V':
+                return 5;
+            case 'X':
+                return 10;
+            case 'L':
+                return 50;
+            case 'C':
+                return 100;
+            case 'D':
+                return 500;
+            case 'M':
+                return 1000;   
+        }
+        return 0;
+    }
     int romanToInt(string s) {
-        unordered_map<char, int> m;
-        m['I'] = 1;
-        m['V'] = 5;
-        m['X'] = 10;
-        m['L'] = 50;
-        m['C'] = 100;
-        m['D'] = 500;
-        m['M'] = 1000;
         int ans=0;
         for(int i=0;i<s.size();i++){
-            if(m[s[i]]<m[s[i+1]]) ans -= m[s[i]];
-            else ans += m[s[i]];
+            if(rom(s[i])<rom(s[i+1])) ans -= rom(s[i]);
+            else ans += rom(s[i]);
         }
         return ans;
     }
