@@ -11,15 +11,8 @@
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
-        if(head->next==nullptr){
-            return head;
-        }
-        if(head->next->next==nullptr){
-            return head->next;
-        }
         ListNode* s=head;
         ListNode* f=head;
-
         while(f!=nullptr and f->next!=nullptr){
             f=f->next->next;
             s=s->next;
