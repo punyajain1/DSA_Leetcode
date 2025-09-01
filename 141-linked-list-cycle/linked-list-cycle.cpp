@@ -9,9 +9,7 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-    if (head == nullptr || head->next == nullptr) {
-        return false;
-    }
+    if (head == nullptr || head->next == nullptr) return 0;
     ListNode *s = head;
     ListNode *f = head->next;
     while (f != nullptr && f->next != nullptr) {
