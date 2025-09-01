@@ -15,12 +15,12 @@ public:
     ListNode *s = head;
     ListNode *f = head->next;
     while (f != nullptr && f->next != nullptr) {
+        s = s->next;
+        f = f->next->next;
         if (s==f) {
             return true;
             break;
         }
-        s = s->next;
-        f = f->next->next;
     }
     return false;
 }
