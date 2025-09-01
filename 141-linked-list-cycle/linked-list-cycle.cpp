@@ -12,14 +12,15 @@ public:
     if (head == nullptr || head->next == nullptr) {
         return false;
     }
-    ListNode *slow = head;
-    ListNode *fast = head->next;
-    while (fast != nullptr && fast->next != nullptr) {
-        if (slow == fast) {
+    ListNode *s = head;
+    ListNode *f = head->next;
+    while (f != nullptr && f->next != nullptr) {
+        if (s==f) {
             return true;
+            break;
         }
-        slow = slow->next;
-        fast = fast->next->next;
+        s = s->next;
+        f = f->next->next;
     }
     return false;
 }
