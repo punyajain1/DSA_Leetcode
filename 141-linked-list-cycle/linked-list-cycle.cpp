@@ -17,12 +17,9 @@ public:
     while (f != nullptr && f->next != nullptr) {
         s = s->next;
         f = f->next->next;
-        if (s==f) {
-            return true;
-            break;
-        }
+        if (s==f) return 1;
     }
-    return false;
+    return 0;
 }
 
 };
