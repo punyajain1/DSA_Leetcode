@@ -24,6 +24,6 @@ public:
                 return slow;
             }
         }
-        return NULL;
+        return nullptr;
     }
 };
