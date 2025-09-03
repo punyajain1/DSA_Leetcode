@@ -23,11 +23,8 @@ public:
         }
         temp = temp->next; 
     }
-    if(list1!=nullptr){
-        temp->next = list1;
-    }else{
-        temp->next=list2;
-    }
+    if(list1!=nullptr) temp->next = list1;
+    else temp->next=list2;
     return dummyNode->next;
 }
 
@@ -51,6 +48,5 @@ public:
         ListNode* left = sortList(head);
         ListNode* right = sortList(mid);
         return merge(left,right);
-
     }
 };
