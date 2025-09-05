@@ -20,16 +20,15 @@ public:
         if(count<k){
             return head;
         }
-        ListNode* next = NULL;
-        ListNode* curr = head;
-        ListNode* prev = NULL;
-        int cnt = 0;
-
-        while(curr != NULL && cnt < k) {
-            next = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = next;
+        ListNode* next=nullptr;
+        ListNode* curr=head;
+        ListNode* prev=nullptr;
+        int cnt=0;
+        while(cnt<k && curr!=nullptr){
+            next=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=next;
             cnt++;
         }
         if(next != NULL){
