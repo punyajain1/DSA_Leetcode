@@ -36,14 +36,14 @@ public:
                 if(prev) prev->next=temp;
                 break;
             }
-                ListNode* newl=kth->next;
-                kth->next=nullptr;
-                reversel(temp);
-                if(temp==head){
-                    head=kth;
-                }else{
-                    prev->next=kth;
-                }
+            ListNode* newl=kth->next;
+            kth->next=nullptr;    
+            reversel(temp);
+            if(temp==head){
+                head=kth;
+            }else{
+                prev->next=kth;
+            }
             prev = temp;
             temp = newl;
         }
