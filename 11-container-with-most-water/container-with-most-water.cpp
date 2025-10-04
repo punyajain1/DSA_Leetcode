@@ -5,8 +5,7 @@ public:
         int j=height.size()-1;
         int i=0;
         while(i<j){
-            int a=(j-i)*min(height[i],height[j]);
-            maxi=max(maxi,a);
+            maxi=max(maxi,(j-i)*min(height[i],height[j]));
             height[i]<height[j]? i++:j--;
         }
         return maxi;
