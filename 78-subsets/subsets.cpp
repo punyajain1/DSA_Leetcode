@@ -1,6 +1,7 @@
 class Solution {
 public:
-    void subsets(vector<int>& nums, int i, vector<int>& sub, vector<vector<int>>& subs) {
+    void subsets(vector<int>& nums, int i, vector<int>& sub, vector<vector<int>>& subs){
+        //PUSHING EVERY SUBSET INTO FINEL SET
         subs.push_back(sub);
         for (int j = i; j < nums.size(); j++) {
             sub.push_back(nums[j]);
@@ -8,7 +9,7 @@ public:
             sub.pop_back();
         }
     }
-    
+
     vector<vector<int>> subsets(vector<int>& nums) {
         vector<vector<int>> subs;
         vector<int> sub;
