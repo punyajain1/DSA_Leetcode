@@ -1,16 +1,20 @@
 class Solution {
 public:
-    bool hasIncreasingSubarrays(vector<int>& nums, int k) {
-        int n = nums.size(), a = 1, pi = 0, ml = 0;
-        for (int i = 1; i < n; i++) {
-            if (nums[i] > nums[i - 1]) a++;
-            else {
-                pi = a;
-                a = 1;
-            }
-            ml = max(ml, max(a >> 1, min(pi, a)));
-            if (ml >= k) return true;
-        }
-        return false;
+   
+bool check(vector<int>& nums, int start, int k) {
+    for (int i=start+1;i<start+k;i++) {
+        if(nums[i]<=nums[i-1]) return false;
     }
+    return true;
+}
+
+bool hasIncreasingSubarrays(vector<int>& nums, int k) {
+    int n = nums.size();
+    for (int i=0;i<=n-2*k;i++){
+        if(check(nums,i,k)&&check(nums,i+k,k)){
+            return true;
+        }
+    }
+    return false;
+}
 };
