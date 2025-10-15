@@ -6,11 +6,11 @@ public:
         for(int i=1; i<n; i++){
             if(nums[i]>nums[i-1]) len++; 
             else{
-                k=max({k, len/2, min(len, prev)}); 
+                k=max(k,max(len/2, min(len, prev))); 
                 prev=len;
                 len=1;
             }
         }
-        return max({k, len/2, min(len, prev)});
+        return max(k,max(len/2, min(len, prev)));
     }
 };
