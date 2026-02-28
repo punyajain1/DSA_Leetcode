@@ -24,6 +24,7 @@ public:
     }
 
     TreeNode* bstFromPreorder(vector<int>& preorder) {
+        if(preorder.size() == 0) return NULL;
         int i=0;
         return solve(preorder,i,INT_MIN,INT_MAX);
     }
