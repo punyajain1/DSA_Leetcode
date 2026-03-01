@@ -20,14 +20,13 @@ public:
     }
     
     int next() {
+        if(st.empty()) return -1;
         TreeNode* t1=st.top();
         st.pop();
-        if(t1->right != NULL){
-            TreeNode *temp=t1->right;
-            while(temp!=NULL){
-                st.push(temp);
-                temp = temp->left;
-            }
+        TreeNode *temp=t1->right;
+        while(temp!=NULL){
+            st.push(temp);
+            temp = temp->left;
         }
         return t1->val;
     }
