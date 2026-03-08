@@ -11,24 +11,28 @@
  */
 class Solution {
 public:
-    vector<int> v;
-    void solve(TreeNode* root,int l){
-        if(root==nullptr) return;
-        if(v.size()<=l) v.push_back(0);
-        v[l]+=root->val;
-        solve(root->left,l+1);
-        solve(root->right,l+1);
-    }
     int maxLevelSum(TreeNode* root) {
         int maxi=INT_MIN;
-        int ans=0;
-        solve(root,0);
-        for(int i=0;i<v.size();i++){
-            if(maxi<v[i]){
-                maxi=v[i];
-                ans=i;
+        int ans=1;
+        int l=1;
+        queue<TreeNode*> q;
+        q.push(root);
+        while(!q.empty()){
+            int sum=0;
+            int n=q.size();
+            for(int i=0;i<n;i++){
+                TreeNode* temp=q.front();
+                q.pop();
+                sum+=temp->val;
+                if(temp->left) q.push(temp->left);
+                if(temp->right) q.push(temp->right);
             }
+            if(sum>maxi){
+                maxi=sum;
+                ans=l;
+            }
+            l++;
         }
-        return ans+1;
+        return ans;
     }
 };
