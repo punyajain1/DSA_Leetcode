@@ -15,9 +15,7 @@ public:
         return res;
     }
 };
-
-
 //here we are checking if the lenght of current substring after removing the 
-            //same chare(char which is present at r) is more then k if yes then we cant
-            // replace the char so we increase l by one and remove the acc of char at l 
-            // before increasing by 1
+//same chare(char which is present at r) is more then k if yes then we cant.
+//replace the char so we increase l by one and remove the acc of char at l.
+//before increasing by 1.
