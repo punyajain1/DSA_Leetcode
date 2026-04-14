@@ -2,8 +2,9 @@ class Solution {
 public:
     int calc(vector<int>& piles, int x){
         int th=0;
-        for(int i=0;i<piles.size();i++){
-            th+=((long long)piles[i] + x - 1) / x;
+        for(int pile:piles){
+            //here we do this ceil because it gives us the round of value like it it takes 3.5 hour to eat the ile at speed x then we will takr 4 hours because in quest its given tha tthe koko wont start eating new pile in remaing hour of current end (like ager 50 min bhi bache honge to vo new pile nahi chalu kar sakta)
+            th+=((long long)pile + x - 1) / x;
         }
         return th;
     }
