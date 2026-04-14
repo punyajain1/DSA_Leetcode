@@ -1,12 +1,5 @@
 class Solution {
 public:
-    int maxe(vector<int>& piles){
-        int m=INT_MIN;
-        for(int i=0;i<piles.size();i++){
-            m=max(piles[i],m);
-        }
-        return m;
-    }
     int calc(vector<int>& piles, int x){
         int th=0;
         for(int i=0;i<piles.size();i++){
@@ -15,7 +8,7 @@ public:
         return th;
     }
     int minEatingSpeed(vector<int>& piles, int h) {
-        int r=maxe(piles);
+        int r=*max_element(piles.rbegin(),piles.rend());
         int l=1;
         while(l<r){
             int mid=l+(r-l)/2;
