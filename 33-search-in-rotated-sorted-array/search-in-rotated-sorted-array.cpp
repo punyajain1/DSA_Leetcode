@@ -7,12 +7,14 @@ public:
             if(nums[mid]==target){
                 return mid;
             }else if(nums[l]<=nums[mid]){
+                //if there is normal thing like mid is grater then the left one
                 if(nums[mid]>=target && nums[l]<=target){
                     r=mid-1;
                 }else{
                     l=mid+1;
                 }
             }else{
+                //if not normal like mid is smaller then left
                 if(nums[mid]<=target && nums[r]>=target){
                     l=mid+1;
                 }else{
@@ -21,6 +23,5 @@ public:
             }
         }
         return -1;
-        
     }
 };
