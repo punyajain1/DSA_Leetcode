@@ -10,6 +10,7 @@ public:
     }
     
     string get(string key, int timestamp) {
+        if(m.find(key)==m.end())return "";
         auto& values = m[key];
         int left = 0, right = values.size() - 1;
         string result = "";
@@ -22,7 +23,6 @@ public:
                 right = mid - 1;
             }
         }
-
         return result;
     }
 };
