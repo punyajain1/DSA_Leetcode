@@ -20,19 +20,10 @@ public:
     // }
     TreeNode* invertTree(TreeNode* root) {
         if(root == NULL) return NULL;
-
-
-        // TreeNode* r2= new TreeNode(root->val);
-        // solve(root,r2);
-        // return r2;
-
-
         if (!root) {
             return root;
         }
-        TreeNode* temp=root->left;
-        root->left=root->right;
-        root->right=temp;
+        swap(root->left,root->right);
         invertTree(root->left);
         invertTree(root->right);
         return root;
