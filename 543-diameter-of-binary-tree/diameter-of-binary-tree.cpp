@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    int ans;
+    int ans=0;
     int solve(TreeNode* root){
         if (root == NULL) return 0;
         int l=solve(root->left);
@@ -20,7 +20,6 @@ public:
         return max(l,r)+1;
     }
     int diameterOfBinaryTree(TreeNode* root) {
-        ans = 0;
         solve(root);
         return ans;
     }
