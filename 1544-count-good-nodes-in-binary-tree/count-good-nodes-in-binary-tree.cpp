@@ -13,9 +13,9 @@ class Solution {
 public:
     int cnt=0;
     void dfs(TreeNode* root , int x){
-        if(!root) return; 
+        if(!root){ return; }
         x=max(x,root->val);
-        if(root->val >= x) cnt++;
+        if(root->val >= x){ cnt++;}
         dfs(root->left,x);
         dfs(root->right,x);
     }
