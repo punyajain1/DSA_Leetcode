@@ -11,14 +11,17 @@
  */
 class Solution {
 public:
-    int solve(TreeNode* root,int m){
-        if(!root) return 0;
-        if(root->val >= m){
-            return solve(root->left,root->val)+solve(root->right,root->val)+1;
-        }
-        return solve(root->left,m)+solve(root->right,m);
+    int cnt=0;
+    void dfs(TreeNode* root , int x){
+        if(!root) return; 
+        x=max(x,root->val);
+        if(root->val >= x) cnt++;
+        dfs(root->left,x);
+        dfs(root->right,x);
     }
     int goodNodes(TreeNode* root) {
-        return solve(root,root->val);
+        int x=root->val;
+        dfs(root,x);
+        return cnt;
     }
 };
