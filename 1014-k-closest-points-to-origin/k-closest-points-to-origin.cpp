@@ -11,9 +11,11 @@ public:
                 pq.pop();
             }
         }
-        while(!pq.empty()) {
+        int n=pq.size();
+        while(n>0){
             ans.push_back(pq.top().second);
             pq.pop();
+            n--;
         }
         return ans;
     }
