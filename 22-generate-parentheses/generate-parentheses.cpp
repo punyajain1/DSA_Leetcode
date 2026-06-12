@@ -1,19 +1,19 @@
 class Solution {
 public:
     vector<string> res;
-    void rec(string & s,int open,int close){
-        if((open + close) ==0){
+    void rec(string & s,int o,int c){
+        if((o+c)==0){
             res.push_back(s);
             return;
         }
-        if(open>0){
+        if(o>0){
             s.push_back('(');
-            rec(s,open-1,close);
+            rec(s,o-1,c);
             s.pop_back();
         }
-        if(open<close){
+        if(o<c){
             s.push_back(')');
-            rec(s,open,close-1);
+            rec(s,o,c-1);
             s.pop_back();
         }
     }
