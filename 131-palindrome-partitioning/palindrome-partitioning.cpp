@@ -24,6 +24,8 @@ public:
             }
         }
     }
+
+    
     vector<vector<string>> partition(string s) {
         vector<vector<string>> v;
         if(s.length()==0) return v;
