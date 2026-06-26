@@ -7,14 +7,16 @@ public:
         int tf=0;
         for(int i=n-1;i>=0;i--){
             //no adjecent transection restriction
-            dp[i][0]=max(prices[i]-fee+dp[i+1][1] //sell
-            ,dp[i+1][0] //hold
+            //we will remove fee from finel profit after selling
+            dp[i][1]=max(prices[i] -fee +dp[i+1][0] //sell (max of holding or selling after removing fee)
+            ,dp[i+1][1] //hold
             );
-            dp[i][1]=max(-prices[i]+dp[i+1][0] //buy
-            , dp[i+1][1] //skip
+
+            dp[i][0]=max(-prices[i] +dp[i+1][1] //buy
+            ,dp[i+1][0] //skip
             );
         }
 
-        return dp[0][1];
+        return dp[0][0];
     }
 };
