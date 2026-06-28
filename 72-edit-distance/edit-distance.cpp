@@ -19,10 +19,10 @@ public:
         vector<vector<int>>dp(n+1,vector<int>(m+1,-1));
         //return solve(n,m,word1,word2 , dp);
         for(int i=0;i<=n;i++){
-            dp[i][0]=i;
+            dp[i][0]=i; // we have to delete exactly i element in w1
         }
         for(int j=0;j<=m;j++){
-            dp[0][j]=j;
+            dp[0][j]=j; // we have to exactly add j element in w1
         }
         for(int i=1;i<=n;i++){
             for(int j=1;j<=m;j++){
